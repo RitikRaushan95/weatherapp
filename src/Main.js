@@ -23,7 +23,6 @@ function Main() {
         fetchWeatherDetails(city);
     }, [city]);
 
-  
     const handleCityChange = (newCity) => {
         setCity(newCity);
         fetchWeatherDetails(newCity);

@@ -14,7 +14,7 @@ function Weather({ weather, onCityChange }) {
 
   return (
     <div>
-      <div className="card" style={{ display: "inline-block", width: "18rem", margin: "20px", backgroundImage: `url("https://miro.medium.com/v2/resize:fit:640/format:webp/1*-qbcY8nyuE2XdusikcmkEw.gif")`,marginLeft:"70vh" }}>
+      <div className="card" style={{ display: "inline-block", width: "18rem", margin: "20px", backgroundImage: `url("https://miro.medium.com/v2/resize:fit:640/format:webp/1*-qbcY8nyuE2XdusikcmkEw.gif")`}}>
         <div className="card-body">
           <h5>Weather</h5>
           <form className="form-inline" onSubmit={handleSearch}>
