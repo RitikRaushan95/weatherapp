@@ -13,7 +13,7 @@ It's a simple React application that allows to search for weather information by
 1. Enter a city name in the search input.
 2. Click the "Search" button to get weather information for the specified city.
 3. The app will display the current temperature, wind speed, humidity, and pressure.
-4. If the button is cleaked with null value of Input field then by default it'll show the data of Bakhtiyarpur.
+4. If the button is clicked with null value of Input field then by default it'll show the data of Bakhtiyarpur.
 
 ## Credits
 - Weather data is retrieved from an external API.
