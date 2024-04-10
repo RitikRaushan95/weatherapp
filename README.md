@@ -2,7 +2,7 @@
 
 ## Description
 It's a simple React application that allows to search for weather information by city name. It displays the current temperature in Celsius, wind speed, humidity, and pressure.
-
+Try it by visiting the link at https://weatherapp-lyart-one.vercel.app/
 ## Features
 - Search for weather by city name
 - Display current temperature in Celsius
