@@ -1,14 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function Weather({ weather, onCityChange }) {
-  const celcius= Math.floor((weather.main?.temp) - 273.15);
+  const [myTime, setCurrentTime] = useState(new Date());
+  const celcius = Math.floor((weather.main?.temp) - 273.15);
   const [city, setCity] = useState('');
+
+  useEffect(() => {
+    const setTime = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(setTime);
+  }, []);
 
   const handleSearch = (event) => {
     event.preventDefault();
     let newCity = document.querySelector(".form-control").value;
-    if(newCity === '') {
+    if (newCity === '') {
       newCity = 'Bakhtiyarpur';
     }
     setCity(newCity);
@@ -17,9 +26,9 @@ function Weather({ weather, onCityChange }) {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <div className="card" style={{ width: "18rem", backgroundImage: `url("https://miro.medium.com/v2/resize:fit:640/format:webp/1*-qbcY8nyuE2XdusikcmkEw.gif")`}}>
+      <div className="card" style={{ width: "18rem", backgroundImage: `url("https://miro.medium.com/v2/resize:fit:640/format:webp/1*-qbcY8nyuE2XdusikcmkEw.gif")` }}>
         <div className="card-body">
-          <h5>Weather</h5>
+          <h5>Weather <span id='realTime' style={{ float: "right"}}>{myTime.toLocaleTimeString()}</span></h5>
           <form className="form-inline" onSubmit={handleSearch}>
             <div className="form-group" style={{ display: "flex", flexDirection: "row" }}>
               <input className="form-control mr-2" type="search" placeholder="Search for city" aria-label="Search" style={{ width: "11rem" }} />
